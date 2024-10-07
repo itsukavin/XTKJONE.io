@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom right, #ffafbd, #ffc3a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+}
+
+.main-title {
+    color: #ff6b81;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+input {
+    padding: 15px;
+    margin: 10px;
+    width: 80%;
+    border: 2px solid #ff6b81;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #ff6b81;
+    box-shadow: 0 0 10px rgba(255, 107, 129, 0.5);
+}
+
+.love-button {
+    padding: 15px 30px;
+    border: none;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+.love-button:hover {
+    background: linear-gradient(to right, #ff6b81, #ff4757);
+    transform: scale(1.05);
+}
+
+.loading-bar-container {
+    width: 80%;
+    background: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.loading-bar {
+    height: 10px;
+    background-color: #ff6b81;
+    width: 0;
+    animation: loading 2s forwards;
+}
+
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.result-wrapper {
+    margin-top: 20px;
+    position: relative;
+}
+
+.result-canvas {
+    margin: 10px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff6b81;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out;
+}
+
+.notification button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.notification-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: #ffffff;
+    animation: progress 10s linear forwards;
+}
+
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; right: -300px; }
+    to { opacity: 1; right: 20px; }
+}
+                                       
+                                         
+            
