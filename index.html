@@ -554,6 +554,15 @@
                     currentAudio.currentTime = 0;
                 }
             });
+
+            item.addEventListener("click", () => {
+                if (musicDisplay.style.opacity === "1") {
+                    stopMusic();
+                } else {
+                    playMusic();
+                }
+            });
+
         });
     </script>
 
