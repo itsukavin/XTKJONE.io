@@ -1,25 +1,554 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>かわいい</title>
-    <link rel="stylesheet" href="cul.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <h1 class="main-title2">Hello, Siyu!</h1>
-        <h1 style="font-size:14px;"><p style="color: pink; font-size: 14px;">  
-            私があなたを好きだと思うのは本当だと思います、なぜなら私が毎日あなたのことを考えていることに今気づいたからです。あなたと遊ばなかったり、あなたと話さなかったりすると退屈してしまいます。しばらく眠ってから再び起きて、オンラインかどうかを確認するためにあなたを待ち続けます。それを何度もやり続けています。そして、私はあなたを好きになり始めていることに今気づきました。あなたの顔を知らなくても、あなたの性格、優しいところ、面白いところ、優しいところ、すべてが大好きです！もう我慢できない この気持ちを正直に伝えないといけないけど、関係を壊してしまったら大変です。私が言いたいのはそれだけです。ありがとうございます
-        </h1></h1>
-    </div>
+    <title>X TKJ 1</title>
 
-    <div id="notification" class="notification" style="display: none;">
-        <span id="notificationMessage"></span>
-        <button id="closeNotification" onclick="closeNotification()">×</button>
-        <div class="notification-progress"></div>
-    </div>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fredoka One', cursive;
+            color: white;
+            background-color: #111;
+        }
+
+        .hero {
+            background-image: url("https://i.pinimg.com/1200x/e7/77/58/e77758f63e604583ef52a906774333b2.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero img.logo {
+            max-height: 300px;
+            height: auto;
+            margin: -490px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            text-shadow: 3px 3px 6px black;
+            margin-top: 500px;
+        }
+
+        .hero h3 {
+            font-size: 22px;
+            text-shadow: 3px 3px 6px black;
+            margin-top: -20px;
+        }
+
+        .hero h4 {
+            font-size: 22px;
+            text-shadow: 3px 3px 6px black;
+            margin-top: -20px;
+        }
+
+         .hero h5 {
+            font-size: 22px;
+            text-shadow: 3px 3px 6px black;
+            margin-top: -30px;
+        }
+
+
+        .about {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("https://i0.wp.com/wessels-filmkritik.com/wp-content/uploads/2024/07/ich_einfach_unverbes_szenenbild19_m.jpg-e1720611988250.jpg?resize=860%2C280&ssl=1");
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-shadow: 3px 3px 6px black;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 22px;
+            line-height: 1.6;
+            text-shadow: 3px 3px 6px black;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("https://cdn.wallpapersafari.com/54/3/3fiYb2.jpg");
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #83f7ff;
+            text-shadow: 3px 3px 6px black;
+        }
+
+        /* Teacher */
+        .teacher {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .teacher .gallery-item img {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s;
+        }
+
+        .teacher .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .teacher .label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 6px black;
+        }
+
+        /* Students */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery-item .label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px black;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .gallery-item img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .gallery-item:hover .label {
+            color: #83f7ff;
+            transform: scale(1.1);
+        }
+
+        /* Music title */
+        .music-title {
+            display: none;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #83f7ff;
+            text-shadow: 1px 1px 3px black;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <img src="https://i.ibb.co.com/kg7ZB1Rc/xtkj1one.png" alt="X TKJ 1 Logo" class="logo">
+        <h2>❤️Welcome to our class!✨</h2>
+        <h3>👔 24’ students & ♾️ memories</h3>
+        <h4>our teacher : Ms. Sikin Nuratika</h4>
+        <h5>TP 2025 - 2026</h5>
+    </section>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>
+            We are students from Metta Maitreya School! Our class is about technology, creative, design, and how to think smart!
+        </p>
+    </section>
+
+    <section class="gallery">
+        <h2>Our Class Profiles</h2>
+
+        <!-- Teacher -->
+        <div class="teacher">
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/teacher.mp3"
+                data-title="Taylor Swift - Fearless">
+                <span class="label">Ms. Sikin Nuratika</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762249070678026/IMG-20250911-WA0037.jpg?ex=68c462d7&is=68c31157&hm=bf94ecbc79af2e38b5979c1f482ebaa59d547e58a1524f619f126adeefb99243&=&format=webp&width=317&height=563" 
+                alt="Teacher">
+                <span class="music-title"></span>
+            </div>
+        </div>
+
+        <!-- Students -->
+        <div class="gallery-container">
+
+            <!-- Aldric Lionel -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student1.mp3"
+                data-title="Music Name">
+                <span class="label">Aldric Lionel</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357795137065020/WhatsApp_Image_2025-09-12_at_19.11.08_07d61b94.jpg?ex=68c68d7d&is=68c53bfd&hm=61c84bfbe8ad962feb82ead469afeafce9770ca0105b1f949bd2a66471eee1f8&=&format=webp" 
+                alt="Aldric Lionel">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Aurelius Autama -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student2.mp3"
+                data-title="Perunggu - Tapi">
+                <span class="label">Aurelius Autama</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762167722147910/IMG-20250911-WA0024.jpg?ex=68c462c4&is=68c31144&hm=27b9f0aedda60e074312d1babace2b7e1d9f9f8fa3acf8325bfea07f0fa43560&=&format=webp&width=405&height=582"
+                    alt="Aurelius Autama">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Carles Darwin -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student3.mp3"
+                data-title="Lloyd - You">
+                <span class="label">Carles Darwin</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357793681903636/WhatsApp_Image_2025-09-13_at_08.11.47_cb2fdfd8.jpg?ex=68c68d7c&is=68c53bfc&hm=ab6fcadce53c9e5e99c1dfc272e93d76fb916866bd75c675c38ede50f0cc8ae2&=&format=webp" 
+                alt="Carles Darwin">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Chellestine Daveen -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student4.mp3"
+                data-title="RINI - Your Ecstasy">
+                <span class="label">Chellestine Daveen</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762198239772703/IMG-20250911-WA0034.jpg?ex=68c462cb&is=68c3114b&hm=6bbaa46ff0ee0b3b88a6de06f7075beb143a02f0247d3cb091b16b3428062350&=&format=webp&width=446&height=582"
+                    alt="Chellestine Daveen">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Christian Inezta -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student5.mp3"
+                data-title="OM ANTON LARI MARATHON">
+                <span class="label">Christian Inezta</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357794189283441/WhatsApp_Image_2025-09-13_at_08.13.33_e610f2f9.jpg?ex=68c68d7c&is=68c53bfc&hm=6b814fd766e16848395a385100e47f2170877ab0a61e138d3b8b7a1615d6c5b3&=&format=webp"
+                    alt="Christian Inezta">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Darren Frederick -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student6.mp3"
+                data-title="en - Wo Zou Hou (我走后)">
+                <span class="label">Darren Frederick</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762168426791023/IMG-20250911-WA0026.jpg?ex=68c462c4&is=68c31144&hm=95487ec2841e5ce6d245b9de095f10cc11106b5e96dec2e34c5a3c96a6b56673&=&format=webp&width=623&height=582"
+                    alt="Darren Frederick">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Elysia Winarti Prajnawati -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student7.mp3"
+                data-title="MAYDAY五月天 [ 任性 Willful ]">
+                <span class="label">Elysia Winarti Prajnawati</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416361093865148448/image.png?ex=68c6908f&is=68c53f0f&hm=26aa377b2bf4c647fb130dbcfc27a2749256d896a06fb5e62052205af44431c6&=&format=webp&quality=lossless"
+                    alt="Elysia Winarti Prajnawati">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Gael Gulliver Gultom -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student8.mp3"
+                data-title="Tenxi, suisei & Jemsii - mejikuhibiniu">
+                <span class="label">Gael Gulliver Gultom</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416364592459939900/image.png?ex=68c693d1&is=68c54251&hm=ea0c95c4d79545b2416da9f19992845099dfa6d0dd2f2fbc30f6d73e0842c22c&=&format=webp&quality=lossless"
+                    alt="Gael Gulliver Gultom">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Ikhsan Albi Dharma -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student9.mp3"
+                data-title="Alphaville - Forever Young">
+                <span class="label">Ikhsan Albi Dharma</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762168065818634/IMG-20250911-WA0025.jpg?ex=68c462c4&is=68c31144&hm=dffece0f67b3053408e6b7b1a985e5f8b0025ecadbfef509511461ae8f80eae5&=&format=webp&width=489&height=582"
+                    alt="Ikhsan Albi Dharma">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Jayren Hollis -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student10.mp3"
+                data-title="Bill Withers - Just The Two Of Us">
+                <span class="label">Jayren Hollis</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416364756394184724/image.png?ex=68c693f8&is=68c54278&hm=af8d77376bcda5d48a54f4e899cb9b90a702a0eacaa997e4fd1a66e127ca287c&=&format=webp&quality=lossless" 
+                alt="Jayreen Hollis">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Joyce Felicia -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student11.mp3"
+                data-title="Justin Bieber - DAISIES">
+                <span class="label">Joyce Felicia</span>
+                <img src="https://i.pinimg.com/236x/0b/53/2e/0b532ebe238e764a62580a9bf18d8be9.jpg" 
+                alt="Joyce Felicia">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Justin Lie -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student12.mp3"
+                data-title="HALO-HALO BANDUNG">
+                <span class="label">Justin Lie</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762197757296640/IMG-20250911-WA0033.jpg?ex=68c462cb&is=68c3114b&hm=b68e3601c0fc3c657a00883f8ccb91bf43e7c37442857d7688183a8c0a95869d&=&format=webp&width=582&height=582" 
+                alt="Justin Lie">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Katie Antono -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student13.mp3"
+                data-title="Charlie Puth - Attention">
+                <span class="label">Katie Antono</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416365111874031658/image.png?ex=68c6944d&is=68c542cd&hm=b5bca6bcb187176fad52158cc3ec3c0495819340e862b865408aedb93956e611&=&format=webp&quality=lossless" 
+                alt="Katie Antono">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Kevin Lim -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student14.mp3"
+                data-title="He is we - I Wouldn't Mind">
+                <span class="label">Kevin Lim</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415751192344006676/image.png?ex=68c4588b&is=68c3070b&hm=cd6e352f62db6869b6f64e4476c209a85dba1bfe4d86e4426e6f5cfa1ed3cf7d&=&format=webp&quality=lossless"
+                    alt="Kevin Lim">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Lovely Johana -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student15.mp3"
+                data-title="Music Name">
+                <span class="label">Lovely Johana</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762250077311048/IMG-20250911-WA0039.jpg?ex=68c462d8&is=68c31158&hm=ffe333699c692b9d8ad239895b3fb6fa13dbe4c42ea05e7be1637ac6f761bf38&=&format=webp&width=387&height=582" 
+                alt="Lovely Johana">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Maribel Nathania Orlin Chu -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student16.mp3"
+                data-title="Rex Orange Country - Happiness">
+                <span class="label">Maribel Nathania O.C.</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762249515143218/IMG-20250911-WA0038.jpg?ex=68c462d7&is=68c31157&hm=56833386bcff352142700c3ac844f1aae89187d375460e8375b2de374a9d4d39&=&format=webp&width=582&height=582"
+                    alt="Maribel Nathania Orlin Chu">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Michael Ferdinand -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student17.mp3"
+                data-title="MONTAGEM XONADA">
+                <span class="label">Michael Ferdinand</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762168821059705/IMG-20250911-WA0027.jpg?ex=68c462c4&is=68c31144&hm=07b22e8e19918c1f35df2a2f37c2a735b1027aa12b582097e0f1938814c2db71&=&format=webp&width=422&height=582"
+                    alt="Michael Ferdinand">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Nicky Anderson -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student18.mp3"
+                data-title="NIKI - You'll be in my heart">
+                <span class="label">Nicky Anderson</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357794654978148/WhatsApp_Image_2025-09-12_at_19.11.07_ef2f3fb6.jpg?ex=68c68d7c&is=68c53bfc&hm=0e55202b5c8f180cafc8fdc1f140b1b3090bf8bfba02fff5e4d65a7895fc5e0b&=&format=webp" 
+                alt="Nicky Anderson">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Qiubert Xavier -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student19.mp3"
+                data-title="One Direction - Perfect">
+                <span class="label">Qiubert Xavier</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762247904657429/IMG-20250911-WA0042.jpg?ex=68c462d7&is=68c31157&hm=19e28660e61e42ba7b7daa975ee708b0c945ce827bcb232e02d35ab79c5102a6&=&format=webp&width=327&height=582" 
+                alt="Qiubert Xavier">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Richard Alvaro -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student20.mp3"
+                data-title="Twinkle Twinkle Little Star">
+                <span class="label">Richard Alvaro</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762248466567400/IMG-20250911-WA0036.jpg?ex=68c462d7&is=68c31157&hm=9d3aebd2b939e217cf199ee45ce97161be89f35d51962c5254f8d92459b4694f&=&format=webp&width=444&height=513" 
+                alt="Richard Alvaro">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Satriady Arya Winata -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student21.mp3"
+                data-title="Music Name">
+                <span class="label">Satriady Arya Winata</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762132091273226/IMG-20250911-WA0022.jpg?ex=68c462bb&is=68c3113b&hm=59b6f12c31cad9a522a9d1fa1fe46e907cb40f4310fc88738f0f661738e1b5ef&=&format=webp&width=416&height=582"
+                    alt="Satriady Arya Winata">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Stefanus Fiexen Wijaya -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student22.mp3"
+                data-title="Indonesia Raya">
+                <span class="label">Stefanus Fiexen Wijaya</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762167176892618/IMG-20250911-WA0029.jpg?ex=68c462c4&is=68c31144&hm=b18c761140353e4d8a9d5c76694289aa3399c7dae151e199fc786f31602f03f1&=&format=webp&width=582&height=582"
+                    alt="Stefanus Fiexen Wijaya">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Viencent Liang -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student23.mp3"
+                data-title="Wali - Nenekku Pahlawanku ">
+                <span class="label">Viencent Liang</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762129759371436/IMG-20250911-WA0023.jpg?ex=68c462bb&is=68c3113b&hm=118705772f41ed712826ab64cd9e5afc2ba38fd5ccb569c7126ee43a371248f7&=&format=webp&width=582&height=582" 
+                alt="Viencent Liang">
+                <span class="music-title"></span>
+            </div>
+
+            <!-- Zivanna Leticia Chou -->
+            <div class="gallery-item"
+                data-music="https://github.com/itsukavin/music/releases/download/music/student24.mp3"
+                data-title="Daniel Caesar - Transform">
+                <span class="label">Zivanna Leticia Chou</span>
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762250647601263/IMG-20250911-WA0040.jpg?ex=68c462d8&is=68c31158&hm=91b921e238809adc6dbf76ae2146b282812b343d6c6cfa0e82b3c996f9209c51&=&format=webp&width=392&height=582"
+                    alt="Zivanna Leticia Chou">
+                <span class="music-title"></span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 X TKJ 1 | Made with ❤️ by @Itsukavin <br>
+        <a href="https://www.instagram.com/xtkj.0ne/" target="_blank"
+            style="color:#ff4db8; text-decoration:none; font-size:18px; margin: 0 8px;">
+            <i class="fab fa-instagram"></i> X TKJ 1
+        </a>
+        |
+        <a href="https://www.instagram.com/itsukavin/" target="_blank"
+            style="color:#ff4db8; text-decoration:none; font-size:18px; margin: 0 8px;">
+            <i class="fab fa-instagram"></i> Itsukavin
+        </a>
+    </footer>
+
+    <!-- 🎵 Music Title Display -->
+    <div id="music-display"></div>
+
+    <!-- 🎵 Music Hover Script -->
+    <script>
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const musicDisplay = document.getElementById("music-display");
+        let currentAudio = null;
+
+        galleryItems.forEach(item => {
+            const musicSrc = item.getAttribute("data-music");
+            const title = item.getAttribute("data-title");
+
+            item.addEventListener("mouseenter", () => {
+                // Show song title in bottom bar
+                if (title) {
+                    musicDisplay.textContent = "🎵 " + title;
+                    musicDisplay.style.opacity = "1";
+                }
+
+                // Play music
+                if (musicSrc) {
+                    if (currentAudio) {
+                        currentAudio.pause();
+                        currentAudio.currentTime = 0;
+                    }
+                    currentAudio = new Audio(musicSrc);
+                    currentAudio.play();
+                }
+            });
+
+            item.addEventListener("mouseleave", () => {
+                // Hide title
+                musicDisplay.style.opacity = "0";
+
+                // Stop music
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Music title bottom bar */
+        #music-display {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            color: #83f7ff;
+            text-shadow: 1px 1px 3px black;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+    </style>
+
+
 </body>
+
 </html>
- 
-            
