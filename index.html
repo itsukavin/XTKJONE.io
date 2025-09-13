@@ -9,75 +9,80 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Fredoka One', cursive;
+            font-family: 'Arial', "Serif";
             color: white;
             background-color: #111;
         }
 
-   .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;   /* konten di atas */
-    align-items: center;
-    text-align: center;
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* content at top */
+            align-items: center;
+            text-align: center;
 
-    background-image: url("https://i.pinimg.com/1200x/e7/77/58/e77758f63e604583ef52a906774333b2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+            background-image: url("https://i.pinimg.com/1200x/e7/77/58/e77758f63e604583ef52a906774333b2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
-    padding-top: 40px;  /* jarak dari atas layar */
-    min-height: 100vh;  /* full layar */
-    box-sizing: border-box;
-}
+            padding-top: 40px;
+            /* distance from top */
+            min-height: 100vh;
+            /* full screen */
+            box-sizing: border-box;
+        }
 
-.hero img.logo {
-    width: 60%;
-    max-width: 320px;
-    height: auto;
-    margin-bottom: 10px;
-}
+        .hero img.logo {
+            width: 100%;
+            max-width: 280px;
+            /* default for tablets */
+            height: auto;
+            margin-bottom: 12px;
+        }
 
-.hero h2, .hero h3, .hero h4, .hero h5 {
-    text-shadow: 3px 3px 6px black;
-    margin: 6px 0;
-}
+        .hero h2,
+        .hero h3,
+        .hero h4,
+        .hero h5 {
+            text-shadow: 3px 3px 6px black;
+            margin: 6px 0;
+        }
 
-        /* Mobile */
-        @media (max-width: 600px) {
-            .hero {
-                padding-top: 20px;
-            }
-
+        /* 💻 Desktop */
+        @media (min-width: 1024px) {
             .hero img.logo {
-                max-width: 220px;
+                max-width: 420px;
+                /* bigger on large screens */
             }
 
             .hero h2 {
-                font-size: 22px;
+                font-size: 42px;
             }
 
             .hero h3,
             .hero h4,
             .hero h5 {
-                font-size: 16px;
+                font-size: 24px;
             }
         }
 
-        /* Desktop besar */
-        @media (min-width: 1200px) {
+        /* 🖥️ Extra large screens */
+        @media (min-width: 1400px) {
             .hero img.logo {
-                max-width: 400px;
+                max-width: 500px;
+                /* even bigger on huge monitors */
             }
 
             .hero h2 {
-                font-size: 40px;
+                font-size: 50px;
             }
 
             .hero h3,
             .hero h4,
             .hero h5 {
-                font-size: 26px;
+                font-size: 28px;
             }
         }
 
