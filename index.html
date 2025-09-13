@@ -14,49 +14,72 @@
             background-color: #111;
         }
 
-        .hero {
-            background-image: url("https://i.pinimg.com/1200x/e7/77/58/e77758f63e604583ef52a906774333b2.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+   .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;   /* konten di atas */
+    align-items: center;
+    text-align: center;
+
+    background-image: url("https://i.pinimg.com/1200x/e7/77/58/e77758f63e604583ef52a906774333b2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding-top: 40px;  /* jarak dari atas layar */
+    min-height: 100vh;  /* full layar */
+    box-sizing: border-box;
+}
+
+.hero img.logo {
+    width: 60%;
+    max-width: 320px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.hero h2, .hero h3, .hero h4, .hero h5 {
+    text-shadow: 3px 3px 6px black;
+    margin: 6px 0;
+}
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero {
+                padding-top: 20px;
+            }
+
+            .hero img.logo {
+                max-width: 220px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .hero h3,
+            .hero h4,
+            .hero h5 {
+                font-size: 16px;
+            }
         }
 
-        .hero img.logo {
-            max-height: 300px;
-            height: auto;
-            margin: -490px;
-        }
+        /* Desktop besar */
+        @media (min-width: 1200px) {
+            .hero img.logo {
+                max-width: 400px;
+            }
 
-        .hero h2 {
-            font-size: 30px;
-            text-shadow: 3px 3px 6px black;
-            margin-top: 500px;
-        }
+            .hero h2 {
+                font-size: 40px;
+            }
 
-        .hero h3 {
-            font-size: 22px;
-            text-shadow: 3px 3px 6px black;
-            margin-top: -20px;
+            .hero h3,
+            .hero h4,
+            .hero h5 {
+                font-size: 26px;
+            }
         }
-
-        .hero h4 {
-            font-size: 22px;
-            text-shadow: 3px 3px 6px black;
-            margin-top: -20px;
-        }
-
-         .hero h5 {
-            font-size: 22px;
-            text-shadow: 3px 3px 6px black;
-            margin-top: -30px;
-        }
-
 
         .about {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -202,7 +225,8 @@
     <section class="about">
         <h2>About Us</h2>
         <p>
-            We are students from Metta Maitreya School! Our class is about technology, creative, design, and how to think smart!
+            We are students from Metta Maitreya School! Our class is about technology, creative, design, and how to
+            think smart!
         </p>
     </section>
 
@@ -215,8 +239,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/teacher.mp3"
                 data-title="Taylor Swift - Fearless">
                 <span class="label">Ms. Sikin Nuratika</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762249070678026/IMG-20250911-WA0037.jpg?ex=68c462d7&is=68c31157&hm=bf94ecbc79af2e38b5979c1f482ebaa59d547e58a1524f619f126adeefb99243&=&format=webp&width=317&height=563" 
-                alt="Teacher">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762249070678026/IMG-20250911-WA0037.jpg?ex=68c462d7&is=68c31157&hm=bf94ecbc79af2e38b5979c1f482ebaa59d547e58a1524f619f126adeefb99243&=&format=webp&width=317&height=563"
+                    alt="Teacher">
                 <span class="music-title"></span>
             </div>
         </div>
@@ -229,8 +253,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student1.mp3"
                 data-title="Music Name">
                 <span class="label">Aldric Lionel</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357795137065020/WhatsApp_Image_2025-09-12_at_19.11.08_07d61b94.jpg?ex=68c68d7d&is=68c53bfd&hm=61c84bfbe8ad962feb82ead469afeafce9770ca0105b1f949bd2a66471eee1f8&=&format=webp" 
-                alt="Aldric Lionel">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357795137065020/WhatsApp_Image_2025-09-12_at_19.11.08_07d61b94.jpg?ex=68c68d7d&is=68c53bfd&hm=61c84bfbe8ad962feb82ead469afeafce9770ca0105b1f949bd2a66471eee1f8&=&format=webp"
+                    alt="Aldric Lionel">
                 <span class="music-title"></span>
             </div>
 
@@ -249,8 +273,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student3.mp3"
                 data-title="Lloyd - You">
                 <span class="label">Carles Darwin</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357793681903636/WhatsApp_Image_2025-09-13_at_08.11.47_cb2fdfd8.jpg?ex=68c68d7c&is=68c53bfc&hm=ab6fcadce53c9e5e99c1dfc272e93d76fb916866bd75c675c38ede50f0cc8ae2&=&format=webp" 
-                alt="Carles Darwin">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357793681903636/WhatsApp_Image_2025-09-13_at_08.11.47_cb2fdfd8.jpg?ex=68c68d7c&is=68c53bfc&hm=ab6fcadce53c9e5e99c1dfc272e93d76fb916866bd75c675c38ede50f0cc8ae2&=&format=webp"
+                    alt="Carles Darwin">
                 <span class="music-title"></span>
             </div>
 
@@ -319,8 +343,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student10.mp3"
                 data-title="Bill Withers - Just The Two Of Us">
                 <span class="label">Jayren Hollis</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416364756394184724/image.png?ex=68c693f8&is=68c54278&hm=af8d77376bcda5d48a54f4e899cb9b90a702a0eacaa997e4fd1a66e127ca287c&=&format=webp&quality=lossless" 
-                alt="Jayreen Hollis">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416364756394184724/image.png?ex=68c693f8&is=68c54278&hm=af8d77376bcda5d48a54f4e899cb9b90a702a0eacaa997e4fd1a66e127ca287c&=&format=webp&quality=lossless"
+                    alt="Jayreen Hollis">
                 <span class="music-title"></span>
             </div>
 
@@ -329,8 +353,7 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student11.mp3"
                 data-title="Justin Bieber - DAISIES">
                 <span class="label">Joyce Felicia</span>
-                <img src="https://i.pinimg.com/236x/0b/53/2e/0b532ebe238e764a62580a9bf18d8be9.jpg" 
-                alt="Joyce Felicia">
+                <img src="https://i.pinimg.com/236x/0b/53/2e/0b532ebe238e764a62580a9bf18d8be9.jpg" alt="Joyce Felicia">
                 <span class="music-title"></span>
             </div>
 
@@ -339,8 +362,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student12.mp3"
                 data-title="HALO-HALO BANDUNG">
                 <span class="label">Justin Lie</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762197757296640/IMG-20250911-WA0033.jpg?ex=68c462cb&is=68c3114b&hm=b68e3601c0fc3c657a00883f8ccb91bf43e7c37442857d7688183a8c0a95869d&=&format=webp&width=582&height=582" 
-                alt="Justin Lie">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762197757296640/IMG-20250911-WA0033.jpg?ex=68c462cb&is=68c3114b&hm=b68e3601c0fc3c657a00883f8ccb91bf43e7c37442857d7688183a8c0a95869d&=&format=webp&width=582&height=582"
+                    alt="Justin Lie">
                 <span class="music-title"></span>
             </div>
 
@@ -349,8 +372,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student13.mp3"
                 data-title="Charlie Puth - Attention">
                 <span class="label">Katie Antono</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416365111874031658/image.png?ex=68c6944d&is=68c542cd&hm=b5bca6bcb187176fad52158cc3ec3c0495819340e862b865408aedb93956e611&=&format=webp&quality=lossless" 
-                alt="Katie Antono">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416365111874031658/image.png?ex=68c6944d&is=68c542cd&hm=b5bca6bcb187176fad52158cc3ec3c0495819340e862b865408aedb93956e611&=&format=webp&quality=lossless"
+                    alt="Katie Antono">
                 <span class="music-title"></span>
             </div>
 
@@ -369,8 +392,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student15.mp3"
                 data-title="Music Name">
                 <span class="label">Lovely Johana</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762250077311048/IMG-20250911-WA0039.jpg?ex=68c462d8&is=68c31158&hm=ffe333699c692b9d8ad239895b3fb6fa13dbe4c42ea05e7be1637ac6f761bf38&=&format=webp&width=387&height=582" 
-                alt="Lovely Johana">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762250077311048/IMG-20250911-WA0039.jpg?ex=68c462d8&is=68c31158&hm=ffe333699c692b9d8ad239895b3fb6fa13dbe4c42ea05e7be1637ac6f761bf38&=&format=webp&width=387&height=582"
+                    alt="Lovely Johana">
                 <span class="music-title"></span>
             </div>
 
@@ -399,8 +422,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student18.mp3"
                 data-title="NIKI - You'll be in my heart">
                 <span class="label">Nicky Anderson</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357794654978148/WhatsApp_Image_2025-09-12_at_19.11.07_ef2f3fb6.jpg?ex=68c68d7c&is=68c53bfc&hm=0e55202b5c8f180cafc8fdc1f140b1b3090bf8bfba02fff5e4d65a7895fc5e0b&=&format=webp" 
-                alt="Nicky Anderson">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1416357794654978148/WhatsApp_Image_2025-09-12_at_19.11.07_ef2f3fb6.jpg?ex=68c68d7c&is=68c53bfc&hm=0e55202b5c8f180cafc8fdc1f140b1b3090bf8bfba02fff5e4d65a7895fc5e0b&=&format=webp"
+                    alt="Nicky Anderson">
                 <span class="music-title"></span>
             </div>
 
@@ -409,8 +432,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student19.mp3"
                 data-title="One Direction - Perfect">
                 <span class="label">Qiubert Xavier</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762247904657429/IMG-20250911-WA0042.jpg?ex=68c462d7&is=68c31157&hm=19e28660e61e42ba7b7daa975ee708b0c945ce827bcb232e02d35ab79c5102a6&=&format=webp&width=327&height=582" 
-                alt="Qiubert Xavier">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762247904657429/IMG-20250911-WA0042.jpg?ex=68c462d7&is=68c31157&hm=19e28660e61e42ba7b7daa975ee708b0c945ce827bcb232e02d35ab79c5102a6&=&format=webp&width=327&height=582"
+                    alt="Qiubert Xavier">
                 <span class="music-title"></span>
             </div>
 
@@ -419,8 +442,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student20.mp3"
                 data-title="Twinkle Twinkle Little Star">
                 <span class="label">Richard Alvaro</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762248466567400/IMG-20250911-WA0036.jpg?ex=68c462d7&is=68c31157&hm=9d3aebd2b939e217cf199ee45ce97161be89f35d51962c5254f8d92459b4694f&=&format=webp&width=444&height=513" 
-                alt="Richard Alvaro">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762248466567400/IMG-20250911-WA0036.jpg?ex=68c462d7&is=68c31157&hm=9d3aebd2b939e217cf199ee45ce97161be89f35d51962c5254f8d92459b4694f&=&format=webp&width=444&height=513"
+                    alt="Richard Alvaro">
                 <span class="music-title"></span>
             </div>
 
@@ -449,8 +472,8 @@
                 data-music="https://github.com/itsukavin/music/releases/download/music/student23.mp3"
                 data-title="Wali - Nenekku Pahlawanku ">
                 <span class="label">Viencent Liang</span>
-                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762129759371436/IMG-20250911-WA0023.jpg?ex=68c462bb&is=68c3113b&hm=118705772f41ed712826ab64cd9e5afc2ba38fd5ccb569c7126ee43a371248f7&=&format=webp&width=582&height=582" 
-                alt="Viencent Liang">
+                <img src="https://media.discordapp.net/attachments/1277683919772319764/1415762129759371436/IMG-20250911-WA0023.jpg?ex=68c462bb&is=68c3113b&hm=118705772f41ed712826ab64cd9e5afc2ba38fd5ccb569c7126ee43a371248f7&=&format=webp&width=582&height=582"
+                    alt="Viencent Liang">
                 <span class="music-title"></span>
             </div>
 
